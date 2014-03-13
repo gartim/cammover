@@ -1,0 +1,29 @@
+/etc/lighttpd/conf.d/fastcgi.conf:
+fastcgi.server             = ( ".php" =>
+                               ( "localhost" =>
+                                 (
+                                   "socket" => socket_dir + "/php-fastcgi.socket",
+                                   "bin-path" => "/usr/bin/php-cgi"
+                                 )
+                               )
+                            )
+
+
+
+starter doc:
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+echo "My first PHP script!";
+echo <<<HTML
+      <img src="http://127.0.0.1:8081" />
+HTML;
+?>
+
+</body>
+</html> 
+
+run:
+http://localhost/test.php

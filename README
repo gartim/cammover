@@ -1,0 +1,29 @@
+This project take a polulu usb controller and a logitec camera and combines them 
+to drive the camera over the web, using php and motion and lighttpd software. I
+have tested on both Fedora 20 and Xubutu 14.04.
+
+yum install motion
+yum install ffmpeg
+change motion.conf, see _motion.conf
+yum install lighttpd
+see _php_server for config
+systemctl start lighttpd
+gcc -o /usr/local/bin/maestro_read maestro_read.c 
+gcc -o /usr/local/bin/maestro_set  maestro_set.c 
+add sudoers: see file
+test:
+	<html>
+	<body>
+		<img src="http://127.0.0.1:8081" />
+	</body>
+	</html>
+add to index.php to /var/www/lighttpd
+
+systemctl enable motion
+systemctl enable lighttpd
+browser setting: (firefox) about.config, browser.cache.check_doc_frequency = 0
+added modules.conf and proxy.conf to lighttpd configs to turn on proxyy
+add img to html:
+    <img src="http://localhost/video"><br />
+instead of:
+    <img src="http://localhost:8081"><br />

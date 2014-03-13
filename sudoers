@@ -1,0 +1,8 @@
+# comment out requiretty
+#
+#Defaults    requiretty
+
+lighttpd    ALL=NOPASSWD:/usr/local/bin/maestro_read
+lighttpd    ALL=NOPASSWD:/usr/local/bin/maestro_set
+<userid>    ALL=NOPASSWD:/usr/local/bin/maestro_read
+<userid>    ALL=NOPASSWD:/usr/local/bin/maestro_set
