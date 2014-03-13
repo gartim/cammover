@@ -1,6 +1,6 @@
-This project take a polulu usb controller and a logitec camera and combines them 
+This project take a polulu usb controller and a logitech camera and combines them 
 to drive the camera over the web, using php and motion and lighttpd software. I
-have tested on both Fedora 20 and Xubutu 14.04.
+have tested on both Fedora 20 and Xubuntu 14.04.
 
 yum install motion
 yum install ffmpeg
